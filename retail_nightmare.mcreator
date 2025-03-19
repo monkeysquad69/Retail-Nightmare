@@ -8,11 +8,11 @@
       "registry_name": "box",
       "metadata": {
         "files": [
-          "src/main/resources/assets/retail_nightmare/blockstates/box.json",
           "src/main/resources/data/retail_nightmare/loot_table/blocks/box.json",
-          "src/main/resources/assets/retail_nightmare/models/item/box.json",
+          "src/main/resources/assets/retail_nightmare/blockstates/box.json",
           "src/main/java/com/monkeysquad/retailnightmare/block/BoxBlock.java",
           "src/main/java/com/monkeysquad/retailnightmare/block/entity/BoxBlockEntity.java",
+          "src/main/resources/assets/retail_nightmare/models/item/box.json",
           "src/main/resources/assets/retail_nightmare/models/block/box.json"
         ]
       }
@@ -35,8 +35,8 @@
       "registry_name": "box_gui",
       "metadata": {
         "files": [
-          "src/main/java/com/monkeysquad/retailnightmare/world/inventory/BoxGUIMenu.java",
-          "src/main/java/com/monkeysquad/retailnightmare/client/gui/BoxGUIScreen.java"
+          "src/main/java/com/monkeysquad/retailnightmare/client/gui/BoxGUIScreen.java",
+          "src/main/java/com/monkeysquad/retailnightmare/world/inventory/BoxGUIMenu.java"
         ]
       }
     },
@@ -48,8 +48,8 @@
       "registry_name": "boxitem",
       "metadata": {
         "files": [
-          "src/main/resources/assets/retail_nightmare/models/item/boxitem.json",
-          "src/main/java/com/monkeysquad/retailnightmare/item/BoxitemItem.java"
+          "src/main/java/com/monkeysquad/retailnightmare/item/BoxitemItem.java",
+          "src/main/resources/assets/retail_nightmare/models/item/boxitem.json"
         ]
       }
     },
@@ -155,6 +155,7 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "com.monkeysquad.retailnightmare"
   },
   "mcreatorVersion": 202400452410
