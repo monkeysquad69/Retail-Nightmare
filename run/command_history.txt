@@ -1,0 +1,1 @@
+/summon retail_nightmare:mop_bucket
