@@ -1,9 +1,0 @@
-{
-  "parent": "retail_nightmare:custom/box_packager",
-  "textures": {
-    "all": "retail_nightmare:block/box_packager",
-    "particle": "retail_nightmare:block/box_packager",
-    "0": "retail_nightmare:block/box_packager"
-  },
-  "render_type": "cutout"
-}
