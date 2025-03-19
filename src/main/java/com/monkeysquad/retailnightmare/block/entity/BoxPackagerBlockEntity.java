@@ -1,38 +1,11 @@
 package com.monkeysquad.retailnightmare.block.entity;
 
-import net.neoforged.neoforge.items.wrapper.SidedInvWrapper;
-
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.WorldlyContainer;
-import net.minecraft.world.ContainerHelper;
-import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.nbt.CompoundTag;
-import net.minecraft.core.NonNullList;
-import net.minecraft.core.HolderLookup;
-import net.minecraft.core.Direction;
-import net.minecraft.core.BlockPos;
-
-import javax.annotation.Nullable;
-
-import java.util.stream.IntStream;
-
-import io.netty.buffer.Unpooled;
-
-import com.monkeysquad.retailnightmare.world.inventory.BoxGUIMenu;
-import com.monkeysquad.retailnightmare.init.RetailNightmareModBlockEntities;
-
-public class BoxBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(15, ItemStack.EMPTY);
+public class BoxPackagerBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
 	private final SidedInvWrapper handler = new SidedInvWrapper(this, null);
 
-	public BoxBlockEntity(BlockPos position, BlockState state) {
-		super(RetailNightmareModBlockEntities.BOX.get(), position, state);
+	public BoxPackagerBlockEntity(BlockPos position, BlockState state) {
+		super(RetailNightmareModBlockEntities.BOX_PACKAGER.get(), position, state);
 	}
 
 	@Override
@@ -76,7 +49,7 @@ public class BoxBlockEntity extends RandomizableContainerBlockEntity implements 
 
 	@Override
 	public Component getDefaultName() {
-		return Component.literal("box");
+		return Component.literal("box_packager");
 	}
 
 	@Override
@@ -91,7 +64,7 @@ public class BoxBlockEntity extends RandomizableContainerBlockEntity implements 
 
 	@Override
 	public Component getDisplayName() {
-		return Component.literal("Box");
+		return Component.literal("Box Packager");
 	}
 
 	@Override

@@ -2,19 +2,19 @@
   "_fv": 73,
   "_type": "item",
   "definition": {
-    "renderType": 1,
-    "texture": "minecraft:bundle_filled",
-    "customModelName": "box:default",
+    "renderType": 0,
+    "texture": "mop_bucket_icon",
+    "customModelName": "Normal",
     "customProperties": {},
     "states": [],
-    "name": "Box",
+    "name": "Mop Bucket Spawn",
     "rarity": "COMMON",
     "creativeTabs": [
       {
         "value": "CUSTOM:RetailNightmare"
       }
     ],
-    "stackSize": 1,
+    "stackSize": 64,
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
@@ -29,14 +29,16 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [],
-      "name": "BoxitemSpecialInformation"
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false
     },
-    "inventorySize": 15,
+    "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "MopBucketSpawnRightclicked"
+    },
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,

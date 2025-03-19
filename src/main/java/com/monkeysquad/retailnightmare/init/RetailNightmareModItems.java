@@ -12,13 +12,15 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
+import com.monkeysquad.retailnightmare.item.MopBucketSpawnItem;
 import com.monkeysquad.retailnightmare.item.BoxitemItem;
 import com.monkeysquad.retailnightmare.RetailNightmareMod;
 
 public class RetailNightmareModItems {
 	public static final DeferredRegister.Items REGISTRY = DeferredRegister.createItems(RetailNightmareMod.MODID);
-	public static final DeferredItem<Item> BOX = block(RetailNightmareModBlocks.BOX);
 	public static final DeferredItem<Item> BOXITEM = REGISTRY.register("boxitem", BoxitemItem::new);
+	public static final DeferredItem<Item> MOP_BUCKET_SPAWN = REGISTRY.register("mop_bucket_spawn", MopBucketSpawnItem::new);
+	public static final DeferredItem<Item> BOX_PACKAGER = block(RetailNightmareModBlocks.BOX_PACKAGER);
 
 	// Start of user code block custom items
 	// End of user code block custom items

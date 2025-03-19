@@ -1,32 +1,7 @@
 
 package com.monkeysquad.retailnightmare.world.inventory;
 
-import net.neoforged.neoforge.items.wrapper.InvWrapper;
-import net.neoforged.neoforge.items.SlotItemHandler;
-import net.neoforged.neoforge.items.ItemStackHandler;
-import net.neoforged.neoforge.items.IItemHandlerModifiable;
-import net.neoforged.neoforge.items.IItemHandler;
-import net.neoforged.neoforge.capabilities.Capabilities;
-
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BaseContainerBlockEntity;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.Slot;
-import net.minecraft.world.inventory.ContainerLevelAccess;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.core.BlockPos;
-
-import java.util.function.Supplier;
-import java.util.Map;
-import java.util.HashMap;
-
-import com.monkeysquad.retailnightmare.init.RetailNightmareModMenus;
+import com.monkeysquad.retailnightmare.RetailNightmareMod;
 
 public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<Integer, Slot>> {
 	public final static HashMap<String, Object> guistate = new HashMap<>();
@@ -45,7 +20,7 @@ public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<In
 		super(RetailNightmareModMenus.BOX_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(15);
+		this.internal = new ItemStackHandler(3);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -82,78 +57,18 @@ public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<In
 				}
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 40, 11) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 58, 29) {
 			private final int slot = 0;
 			private int x = BoxGUIMenu.this.x;
 			private int y = BoxGUIMenu.this.y;
 		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 58, 11) {
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 76, 29) {
 			private final int slot = 1;
 			private int x = BoxGUIMenu.this.x;
 			private int y = BoxGUIMenu.this.y;
 		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 76, 11) {
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 94, 29) {
 			private final int slot = 2;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 94, 11) {
-			private final int slot = 3;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 112, 11) {
-			private final int slot = 4;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 40, 29) {
-			private final int slot = 5;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 58, 29) {
-			private final int slot = 6;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 76, 29) {
-			private final int slot = 7;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 94, 29) {
-			private final int slot = 8;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 112, 29) {
-			private final int slot = 9;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(10, this.addSlot(new SlotItemHandler(internal, 10, 40, 47) {
-			private final int slot = 10;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 58, 47) {
-			private final int slot = 11;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(12, this.addSlot(new SlotItemHandler(internal, 12, 76, 47) {
-			private final int slot = 12;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 94, 47) {
-			private final int slot = 13;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(14, this.addSlot(new SlotItemHandler(internal, 14, 112, 47) {
-			private final int slot = 14;
 			private int x = BoxGUIMenu.this.x;
 			private int y = BoxGUIMenu.this.y;
 		}));
@@ -184,16 +99,16 @@ public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<In
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 15) {
-				if (!this.moveItemStackTo(itemstack1, 15, this.slots.size(), true))
+			if (index < 3) {
+				if (!this.moveItemStackTo(itemstack1, 3, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 15, false)) {
-				if (index < 15 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 15 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 3, false)) {
+				if (index < 3 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 3 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 15, 15 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 3, 3 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;
@@ -209,65 +124,7 @@ public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<In
 		return itemstack;
 	}
 
-	@Override
-	protected boolean moveItemStackTo(ItemStack p_38904_, int p_38905_, int p_38906_, boolean p_38907_) {
-		boolean flag = false;
-		int i = p_38905_;
-		if (p_38907_) {
-			i = p_38906_ - 1;
-		}
-		if (p_38904_.isStackable()) {
-			while (!p_38904_.isEmpty() && (p_38907_ ? i >= p_38905_ : i < p_38906_)) {
-				Slot slot = this.slots.get(i);
-				ItemStack itemstack = slot.getItem();
-				if (slot.mayPlace(itemstack) && !itemstack.isEmpty() && ItemStack.isSameItemSameComponents(p_38904_, itemstack)) {
-					int j = itemstack.getCount() + p_38904_.getCount();
-					int k = slot.getMaxStackSize(itemstack);
-					if (j <= k) {
-						p_38904_.setCount(0);
-						itemstack.setCount(j);
-						slot.set(itemstack);
-						flag = true;
-					} else if (itemstack.getCount() < k) {
-						p_38904_.shrink(k - itemstack.getCount());
-						itemstack.setCount(k);
-						slot.set(itemstack);
-						flag = true;
-					}
-				}
-				if (p_38907_) {
-					i--;
-				} else {
-					i++;
-				}
-			}
-		}
-		if (!p_38904_.isEmpty()) {
-			if (p_38907_) {
-				i = p_38906_ - 1;
-			} else {
-				i = p_38905_;
-			}
-			while (p_38907_ ? i >= p_38905_ : i < p_38906_) {
-				Slot slot1 = this.slots.get(i);
-				ItemStack itemstack1 = slot1.getItem();
-				if (itemstack1.isEmpty() && slot1.mayPlace(p_38904_)) {
-					int l = slot1.getMaxStackSize(p_38904_);
-					slot1.setByPlayer(p_38904_.split(Math.min(p_38904_.getCount(), l)));
-					slot1.setChanged();
-					flag = true;
-					break;
-				}
-				if (p_38907_) {
-					i--;
-				} else {
-					i++;
-				}
-			}
-		}
-		return flag;
-	}
-
+	@Override /* failed to load code for net.minecraft.world.inventory.AbstractContainerMenu */
 	@Override
 	public void removed(Player playerIn) {
 		super.removed(playerIn);

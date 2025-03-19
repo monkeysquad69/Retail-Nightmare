@@ -8,11 +8,11 @@
       "registry_name": "box",
       "metadata": {
         "files": [
-          "src/main/resources/data/retail_nightmare/loot_table/blocks/box.json",
           "src/main/resources/assets/retail_nightmare/blockstates/box.json",
+          "src/main/resources/data/retail_nightmare/loot_table/blocks/box.json",
+          "src/main/resources/assets/retail_nightmare/models/item/box.json",
           "src/main/java/com/monkeysquad/retailnightmare/block/BoxBlock.java",
           "src/main/java/com/monkeysquad/retailnightmare/block/entity/BoxBlockEntity.java",
-          "src/main/resources/assets/retail_nightmare/models/item/box.json",
           "src/main/resources/assets/retail_nightmare/models/block/box.json"
         ]
       }
@@ -36,6 +36,7 @@
       "metadata": {
         "files": [
           "src/main/java/com/monkeysquad/retailnightmare/client/gui/BoxGUIScreen.java",
+          "src/main/java/com/monkeysquad/retailnightmare/network/BoxGUIButtonMessage.java",
           "src/main/java/com/monkeysquad/retailnightmare/world/inventory/BoxGUIMenu.java"
         ]
       }
@@ -48,29 +49,44 @@
       "registry_name": "boxitem",
       "metadata": {
         "files": [
-          "src/main/java/com/monkeysquad/retailnightmare/item/BoxitemItem.java",
-          "src/main/resources/assets/retail_nightmare/models/item/boxitem.json"
+          "src/main/resources/assets/retail_nightmare/models/item/boxitem.json",
+          "src/main/java/com/monkeysquad/retailnightmare/item/BoxitemItem.java"
         ]
       }
     },
     {
-      "name": "BoxitemRightclickedOnBlock",
+      "name": "BoxitemSpecialInformation",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "boxitem_rightclicked_on_block",
+      "registry_name": "boxitem_special_information",
+      "metadata": {
+        "return_type": "string",
+        "files": [
+          "src/main/java/com/monkeysquad/retailnightmare/procedures/BoxitemSpecialInformationProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MopBucketOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mop_bucket_on_entity_tick_update",
       "metadata": {
         "files": [
-          "src/main/java/com/monkeysquad/retailnightmare/procedures/BoxitemRightclickedOnBlockProcedure.java"
+          "src/main/java/com/monkeysquad/retailnightmare/procedures/MopBucketOnEntityTickUpdateProcedure.java"
         ],
         "dependencies": [
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "itemstack",
-            "type": "itemstack"
           },
           {
             "name": "x",
@@ -92,14 +108,113 @@
       }
     },
     {
-      "name": "BoxBlockDestroyedByPlayer",
+      "name": "MopBucketSpawn",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mop_bucket_spawn",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/retail_nightmare/models/item/mop_bucket_spawn.json",
+          "src/main/java/com/monkeysquad/retailnightmare/item/MopBucketSpawnItem.java"
+        ]
+      }
+    },
+    {
+      "name": "MopBucket",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mop_bucket",
+      "metadata": {
+        "files": [
+          "src/main/java/com/monkeysquad/retailnightmare/entity/MopBucketEntity.java",
+          "src/main/java/com/monkeysquad/retailnightmare/client/renderer/MopBucketRenderer.java"
+        ]
+      }
+    },
+    {
+      "name": "BoxPacking",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "box_block_destroyed_by_player",
+      "registry_name": "box_packing",
       "metadata": {
         "files": [
-          "src/main/java/com/monkeysquad/retailnightmare/procedures/BoxBlockDestroyedByPlayerProcedure.java"
+          "src/main/java/com/monkeysquad/retailnightmare/procedures/BoxPackingProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "MopBucketRightClickedOnEntity",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mop_bucket_right_clicked_on_entity",
+      "metadata": {
+        "files": [
+          "src/main/java/com/monkeysquad/retailnightmare/procedures/MopBucketRightClickedOnEntityProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BoxPackager",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "box_packager",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/retail_nightmare/loot_table/blocks/box_packager.json",
+          "src/main/resources/assets/retail_nightmare/blockstates/box_packager.json",
+          "src/main/java/com/monkeysquad/retailnightmare/block/entity/BoxPackagerBlockEntity.java",
+          "src/main/java/com/monkeysquad/retailnightmare/block/BoxPackagerBlock.java",
+          "src/main/resources/assets/retail_nightmare/models/item/box_packager.json",
+          "src/main/resources/assets/retail_nightmare/models/block/box_packager.json"
+        ]
+      }
+    },
+    {
+      "name": "MopBucketSpawnRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mop_bucket_spawn_rightclicked",
+      "metadata": {
+        "files": [
+          "src/main/java/com/monkeysquad/retailnightmare/procedures/MopBucketSpawnRightclickedProcedure.java"
         ],
         "dependencies": [
           {
@@ -127,15 +242,27 @@
     }
   ],
   "variable_elements": [],
-  "sound_elements": [],
+  "sound_elements": [
+    {
+      "name": "mop_bucket_step",
+      "files": [
+        "mop_bucket_step1",
+        "mop_bucket_step2",
+        "mop_bucket_step3"
+      ],
+      "category": "neutral",
+      "subtitle": "Mop Bucket Rolls"
+    }
+  ],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
     "en_us": {
       "item_group.retail_nightmare.retail_nightmare": "Retail Nightmare",
-      "block.retail_nightmare.box": "Box",
       "gui.retail_nightmare.box_gui.label_box": "box",
-      "item.retail_nightmare.boxitem": "Box"
+      "item.retail_nightmare.boxitem": "Box",
+      "gui.retail_nightmare.box_gui.button_pack": "Pack",
+      "subtitles.mop_bucket_step": "Mop Bucket Rolls"
     }
   },
   "foldersRoot": {
@@ -155,7 +282,6 @@
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.1",
-    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "com.monkeysquad.retailnightmare"
   },
   "mcreatorVersion": 202400452410
