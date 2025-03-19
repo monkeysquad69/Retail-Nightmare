@@ -45,7 +45,7 @@ public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<In
 		super(RetailNightmareModMenus.BOX_GUI.get(), id);
 		this.entity = inv.player;
 		this.world = inv.player.level();
-		this.internal = new ItemStackHandler(15);
+		this.internal = new ItemStackHandler(3);
 		BlockPos pos = null;
 		if (extraData != null) {
 			pos = extraData.readBlockPos();
@@ -82,78 +82,18 @@ public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<In
 				}
 			}
 		}
-		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 40, 11) {
+		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 58, 29) {
 			private final int slot = 0;
 			private int x = BoxGUIMenu.this.x;
 			private int y = BoxGUIMenu.this.y;
 		}));
-		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 58, 11) {
+		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 76, 29) {
 			private final int slot = 1;
 			private int x = BoxGUIMenu.this.x;
 			private int y = BoxGUIMenu.this.y;
 		}));
-		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 76, 11) {
+		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 94, 29) {
 			private final int slot = 2;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 94, 11) {
-			private final int slot = 3;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 112, 11) {
-			private final int slot = 4;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 40, 29) {
-			private final int slot = 5;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 58, 29) {
-			private final int slot = 6;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 76, 29) {
-			private final int slot = 7;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 94, 29) {
-			private final int slot = 8;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 112, 29) {
-			private final int slot = 9;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(10, this.addSlot(new SlotItemHandler(internal, 10, 40, 47) {
-			private final int slot = 10;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 58, 47) {
-			private final int slot = 11;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(12, this.addSlot(new SlotItemHandler(internal, 12, 76, 47) {
-			private final int slot = 12;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 94, 47) {
-			private final int slot = 13;
-			private int x = BoxGUIMenu.this.x;
-			private int y = BoxGUIMenu.this.y;
-		}));
-		this.customSlots.put(14, this.addSlot(new SlotItemHandler(internal, 14, 112, 47) {
-			private final int slot = 14;
 			private int x = BoxGUIMenu.this.x;
 			private int y = BoxGUIMenu.this.y;
 		}));
@@ -184,16 +124,16 @@ public class BoxGUIMenu extends AbstractContainerMenu implements Supplier<Map<In
 		if (slot != null && slot.hasItem()) {
 			ItemStack itemstack1 = slot.getItem();
 			itemstack = itemstack1.copy();
-			if (index < 15) {
-				if (!this.moveItemStackTo(itemstack1, 15, this.slots.size(), true))
+			if (index < 3) {
+				if (!this.moveItemStackTo(itemstack1, 3, this.slots.size(), true))
 					return ItemStack.EMPTY;
 				slot.onQuickCraft(itemstack1, itemstack);
-			} else if (!this.moveItemStackTo(itemstack1, 0, 15, false)) {
-				if (index < 15 + 27) {
-					if (!this.moveItemStackTo(itemstack1, 15 + 27, this.slots.size(), true))
+			} else if (!this.moveItemStackTo(itemstack1, 0, 3, false)) {
+				if (index < 3 + 27) {
+					if (!this.moveItemStackTo(itemstack1, 3 + 27, this.slots.size(), true))
 						return ItemStack.EMPTY;
 				} else {
-					if (!this.moveItemStackTo(itemstack1, 15, 15 + 27, false))
+					if (!this.moveItemStackTo(itemstack1, 3, 3 + 27, false))
 						return ItemStack.EMPTY;
 				}
 				return ItemStack.EMPTY;

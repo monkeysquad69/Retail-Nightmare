@@ -1,5 +1,5 @@
 {
-  "parent": "retail_nightmare:block/box",
+  "parent": "retail_nightmare:block/box_packager",
   "display": {
     "thirdperson": {
       "rotation": [

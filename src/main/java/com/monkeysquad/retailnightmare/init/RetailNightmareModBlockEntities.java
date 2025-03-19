@@ -15,13 +15,13 @@ import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.core.registries.BuiltInRegistries;
 
-import com.monkeysquad.retailnightmare.block.entity.BoxBlockEntity;
+import com.monkeysquad.retailnightmare.block.entity.BoxPackagerBlockEntity;
 import com.monkeysquad.retailnightmare.RetailNightmareMod;
 
 @EventBusSubscriber(bus = EventBusSubscriber.Bus.MOD)
 public class RetailNightmareModBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(BuiltInRegistries.BLOCK_ENTITY_TYPE, RetailNightmareMod.MODID);
-	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BOX = register("box", RetailNightmareModBlocks.BOX, BoxBlockEntity::new);
+	public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<?>> BOX_PACKAGER = register("box_packager", RetailNightmareModBlocks.BOX_PACKAGER, BoxPackagerBlockEntity::new);
 
 	// Start of user code block custom block entities
 	// End of user code block custom block entities
@@ -31,6 +31,6 @@ public class RetailNightmareModBlockEntities {
 
 	@SubscribeEvent
 	public static void registerCapabilities(RegisterCapabilitiesEvent event) {
-		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BOX.get(), (blockEntity, side) -> ((BoxBlockEntity) blockEntity).getItemHandler());
+		event.registerBlockEntity(Capabilities.ItemHandler.BLOCK, BOX_PACKAGER.get(), (blockEntity, side) -> ((BoxPackagerBlockEntity) blockEntity).getItemHandler());
 	}
 }

@@ -27,12 +27,12 @@ import io.netty.buffer.Unpooled;
 import com.monkeysquad.retailnightmare.world.inventory.BoxGUIMenu;
 import com.monkeysquad.retailnightmare.init.RetailNightmareModBlockEntities;
 
-public class BoxBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
-	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(15, ItemStack.EMPTY);
+public class BoxPackagerBlockEntity extends RandomizableContainerBlockEntity implements WorldlyContainer {
+	private NonNullList<ItemStack> stacks = NonNullList.<ItemStack>withSize(3, ItemStack.EMPTY);
 	private final SidedInvWrapper handler = new SidedInvWrapper(this, null);
 
-	public BoxBlockEntity(BlockPos position, BlockState state) {
-		super(RetailNightmareModBlockEntities.BOX.get(), position, state);
+	public BoxPackagerBlockEntity(BlockPos position, BlockState state) {
+		super(RetailNightmareModBlockEntities.BOX_PACKAGER.get(), position, state);
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class BoxBlockEntity extends RandomizableContainerBlockEntity implements 
 
 	@Override
 	public Component getDefaultName() {
-		return Component.literal("box");
+		return Component.literal("box_packager");
 	}
 
 	@Override
@@ -91,7 +91,7 @@ public class BoxBlockEntity extends RandomizableContainerBlockEntity implements 
 
 	@Override
 	public Component getDisplayName() {
-		return Component.literal("Box");
+		return Component.literal("Box Packager");
 	}
 
 	@Override

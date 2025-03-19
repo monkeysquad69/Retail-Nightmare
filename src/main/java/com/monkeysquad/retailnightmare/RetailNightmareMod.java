@@ -26,8 +26,10 @@ import java.util.Collection;
 import java.util.ArrayList;
 
 import com.monkeysquad.retailnightmare.init.RetailNightmareModTabs;
+import com.monkeysquad.retailnightmare.init.RetailNightmareModSounds;
 import com.monkeysquad.retailnightmare.init.RetailNightmareModMenus;
 import com.monkeysquad.retailnightmare.init.RetailNightmareModItems;
+import com.monkeysquad.retailnightmare.init.RetailNightmareModEntities;
 import com.monkeysquad.retailnightmare.init.RetailNightmareModBlocks;
 import com.monkeysquad.retailnightmare.init.RetailNightmareModBlockEntities;
 
@@ -41,11 +43,11 @@ public class RetailNightmareMod {
 		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
-
+		RetailNightmareModSounds.REGISTRY.register(modEventBus);
 		RetailNightmareModBlocks.REGISTRY.register(modEventBus);
 		RetailNightmareModBlockEntities.REGISTRY.register(modEventBus);
 		RetailNightmareModItems.REGISTRY.register(modEventBus);
-
+		RetailNightmareModEntities.REGISTRY.register(modEventBus);
 		RetailNightmareModTabs.REGISTRY.register(modEventBus);
 
 		RetailNightmareModMenus.REGISTRY.register(modEventBus);
