@@ -1,1 +1,6 @@
-{}
+{
+  "item_group.retail_nightmare.retail_nightmare": "Retail Nightmare",
+  "block.retail_nightmare.box": "Box",
+  "gui.retail_nightmare.box_gui.label_box": "box",
+  "item.retail_nightmare.boxitem": "Box"
+}

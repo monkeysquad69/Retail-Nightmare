@@ -25,6 +25,12 @@ import java.util.HashMap;
 import java.util.Collection;
 import java.util.ArrayList;
 
+import com.monkeysquad.retailnightmare.init.RetailNightmareModTabs;
+import com.monkeysquad.retailnightmare.init.RetailNightmareModMenus;
+import com.monkeysquad.retailnightmare.init.RetailNightmareModItems;
+import com.monkeysquad.retailnightmare.init.RetailNightmareModBlocks;
+import com.monkeysquad.retailnightmare.init.RetailNightmareModBlockEntities;
+
 @Mod("retail_nightmare")
 public class RetailNightmareMod {
 	public static final Logger LOGGER = LogManager.getLogger(RetailNightmareMod.class);
@@ -35,6 +41,14 @@ public class RetailNightmareMod {
 		// End of user code block mod constructor
 		NeoForge.EVENT_BUS.register(this);
 		modEventBus.addListener(this::registerNetworking);
+
+		RetailNightmareModBlocks.REGISTRY.register(modEventBus);
+		RetailNightmareModBlockEntities.REGISTRY.register(modEventBus);
+		RetailNightmareModItems.REGISTRY.register(modEventBus);
+
+		RetailNightmareModTabs.REGISTRY.register(modEventBus);
+
+		RetailNightmareModMenus.REGISTRY.register(modEventBus);
 
 		// Start of user code block mod init
 		// End of user code block mod init

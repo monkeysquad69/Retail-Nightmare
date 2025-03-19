@@ -1,0 +1,7 @@
+{
+  "parent": "retail_nightmare:custom/box",
+  "textures": {
+    "0": "retail_nightmare:block/cardboard_box",
+    "particle": "minecraft:item/bundle_filled"
+  }
+}

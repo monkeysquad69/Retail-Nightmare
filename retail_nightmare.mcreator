@@ -1,11 +1,142 @@
 {
-  "mod_elements": [],
+  "mod_elements": [
+    {
+      "name": "Box",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "box",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/retail_nightmare/blockstates/box.json",
+          "src/main/resources/data/retail_nightmare/loot_table/blocks/box.json",
+          "src/main/resources/assets/retail_nightmare/models/item/box.json",
+          "src/main/java/com/monkeysquad/retailnightmare/block/BoxBlock.java",
+          "src/main/java/com/monkeysquad/retailnightmare/block/entity/BoxBlockEntity.java",
+          "src/main/resources/assets/retail_nightmare/models/block/box.json"
+        ]
+      }
+    },
+    {
+      "name": "RetailNightmare",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "retail_nightmare",
+      "metadata": {
+        "files": []
+      }
+    },
+    {
+      "name": "BoxGUI",
+      "type": "gui",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "box_gui",
+      "metadata": {
+        "files": [
+          "src/main/java/com/monkeysquad/retailnightmare/world/inventory/BoxGUIMenu.java",
+          "src/main/java/com/monkeysquad/retailnightmare/client/gui/BoxGUIScreen.java"
+        ]
+      }
+    },
+    {
+      "name": "Boxitem",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boxitem",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/retail_nightmare/models/item/boxitem.json",
+          "src/main/java/com/monkeysquad/retailnightmare/item/BoxitemItem.java"
+        ]
+      }
+    },
+    {
+      "name": "BoxitemRightclickedOnBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "boxitem_rightclicked_on_block",
+      "metadata": {
+        "files": [
+          "src/main/java/com/monkeysquad/retailnightmare/procedures/BoxitemRightclickedOnBlockProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "BoxBlockDestroyedByPlayer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "box_block_destroyed_by_player",
+      "metadata": {
+        "files": [
+          "src/main/java/com/monkeysquad/retailnightmare/procedures/BoxBlockDestroyedByPlayerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    }
+  ],
   "variable_elements": [],
   "sound_elements": [],
   "tag_elements": {},
   "tab_element_order": {},
   "language_map": {
-    "en_us": {}
+    "en_us": {
+      "item_group.retail_nightmare.retail_nightmare": "Retail Nightmare",
+      "block.retail_nightmare.box": "Box",
+      "gui.retail_nightmare.box_gui.label_box": "box",
+      "item.retail_nightmare.boxitem": "Box"
+    }
   },
   "foldersRoot": {
     "name": "~",

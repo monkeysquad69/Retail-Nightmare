@@ -1,0 +1,9 @@
+{
+  "parent": "retail_nightmare:custom/box",
+  "textures": {
+    "all": "minecraft:block/beehive_side",
+    "particle": "retail_nightmare:block/open_cardboard_box",
+    "0": "retail_nightmare:block/cardboard_box"
+  },
+  "render_type": "solid"
+}
